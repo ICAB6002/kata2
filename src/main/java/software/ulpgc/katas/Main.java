@@ -1,0 +1,34 @@
+package software.ulpgc.katas;
+
+import software.ulpgc.katas.io.CsvGameReader;
+import software.ulpgc.katas.io.StreamGameWriter;
+import software.ulpgc.katas.logic.GameProcessor;
+import software.ulpgc.katas.model.Game;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.List;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        File file = new File("gamesales.csv");
+        if (!file.exists()) {
+            System.err.println("Error: El fichero gamesales.csv no existe.");
+            return;
+        }
+
+        try (FileInputStream inputStream = new FileInputStream(file)) {
+            CsvGameReader reader = new CsvGameReader(inputStream);
+            List<Game> games = reader.read();
+
+            GameProcessor processor = new GameProcessor();
+            Map<String, Integer> stats = processor.countByPlatform(games);
+
+            StreamGameWriter writer = new StreamGameWriter(System.out);
+            writer.write(stats);
+        } catch (Exception e) {
+            System.err.println("Error fatal en la ejecucion: " + e.getMessage());
+        }
+    }
+}
