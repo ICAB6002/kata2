@@ -15,7 +15,7 @@ public class StreamGameWriter implements GameWriter {
     @Override
     public void write(Map<String, Integer> data) throws IOException {
         StringBuilder builder = new StringBuilder();
-        builder.append("=== Resumen de Ventas por Plataforma ===\n");
+        builder.append("=== Recuento de juegos por Plataforma ===\n");
         for (Map.Entry<String, Integer> entry : data.entrySet()) {
             builder.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
         }
