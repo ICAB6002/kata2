@@ -1,0 +1,22 @@
+=== Recuento de juegos por Plataforma ===
+3DS: 7
+PS: 10
+GBA: 3
+XOne: 1
+XB: 2
+PSP: 1
+N64: 4
+PS2: 12
+DS: 14
+SNES: 5
+PS4: 7
+PS3: 20
+GEN: 1
+PC: 2
+2600: 1
+Wii: 20
+WiiU: 1
+GB: 7
+GC: 3
+NES: 5
+X360: 22
